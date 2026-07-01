@@ -3,7 +3,8 @@ class Solution {
         while(num>9){
             int temp=0;
             while(num!=0){
-                temp=temp+num%10;
+                int t=num%10;
+                temp=temp+t;
                 num/=10;
             }
             num=temp;
