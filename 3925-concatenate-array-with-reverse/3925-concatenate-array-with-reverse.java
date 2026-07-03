@@ -2,7 +2,8 @@ class Solution {
     public int[] concatWithReverse(int[] nums) {
         int arr[]=new int[nums.length*2];
         int len=arr.length;
-        for(int i=0;i<nums.length;i++){
+        int len1=nums.length;
+        for(int i=0;i<len1;i++){
             arr[i]=nums[i];
             arr[len-i-1]=nums[i];
         }
