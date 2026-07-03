@@ -3,8 +3,9 @@ class Solution {
        String res="";
         for(String ar:words){
             int temp=0;
-            for(int i=0;i<ar.length();i++){
-                temp+=weights[ar.charAt(i)-'a'];
+            while(!ar.equals("")){
+                temp+=weights[ar.charAt(0)-'a'];
+                ar=ar.substring(1);
             }
             temp='z'-(temp%26);
             res+=(char)temp;
