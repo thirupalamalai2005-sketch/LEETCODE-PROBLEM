@@ -9,15 +9,13 @@ class Solution {
         int right[]=new int[len];
         int left[]=new int[len];
         int sum1=sum;
-        for(int i=0;i<len;i++){
-            right[i]=sum-nums[i];
-            sum-=nums[i];
-        }
         for(int i=len-1;i>0;i--){
             left[i]=sum1-nums[i];
             sum1-=nums[i];
         }
-        for(int i=0;i<nums.length;i++){
+        for(int i=0;i<len;i++){
+            right[i]=sum-nums[i];
+            sum-=nums[i];
             nums[i]=Math.abs(left[i]-right[i]);
         }
         return nums;
