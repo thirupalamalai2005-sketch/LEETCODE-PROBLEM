@@ -5,8 +5,11 @@ class Solution {
         for(int i=0;i<nums.length-1;i++){
             dec=nums[i]>nums[i+1] || dec;
             inc=nums[i]<nums[i+1] || inc;
+            if(inc&&dec){
+                return false;
+            }
         }
-        return !inc||!dec;
+        return true;
         
     }
 }
