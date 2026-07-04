@@ -3,15 +3,10 @@ class Solution {
         boolean inc=false;
         boolean dec=false;
         for(int i=0;i<nums.length-1;i++){
-            if(nums[i]>nums[i+1]){
-                dec=true;
-                continue;
-            }
-            if(nums[i]<nums[i+1]){
-                inc=true;
-            }
+            dec=nums[i]>nums[i+1] || dec;
+            inc=nums[i]<nums[i+1] || inc;
         }
-        return(inc&&dec)?false:true;
+        return !inc||!dec;
         
     }
 }
