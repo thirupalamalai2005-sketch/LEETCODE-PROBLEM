@@ -1,8 +1,11 @@
 class Solution {
     public String triangleType(int[] nums) {
-        return (nums[0]==nums[1] && nums[1]==nums[2])?"equilateral":
-        (nums[0]+nums[1]<=nums[2] || nums[1]+nums[2]<=nums[0] || nums[0]+nums[2]<=nums[1])?"none":
-        (nums[0]==nums[1] && nums[0]+nums[1]>nums[2] || nums[1]==nums[2] && nums[1]+nums[2]>nums[0] || nums[0]==nums[2] && nums[0]+nums[2]>nums[1])?"isosceles":"scalene";
+        int a=nums[0];
+        int b=nums[1];
+        int c=nums[2];
+        return (a==b && b==c)?"equilateral":
+        (a+b<=c || b+c<=a || a+c<=b)?"none":
+        (a==b && a+b>c || b==c && b+c>a || a==c && a+c>b)?"isosceles":"scalene";
     }
 }
 
