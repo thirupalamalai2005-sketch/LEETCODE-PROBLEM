@@ -4,7 +4,7 @@ class Solution {
        int j=words.length;
        for(int i=0;i<j;i++){
         if(words[i].equals(target)){
-            sum=Math.min(Math.min(Math.abs(i-startIndex),words.length-Math.abs(i-startIndex)),sum);
+            sum=Math.min(Math.min(Math.abs(i-startIndex),j-Math.abs(i-startIndex)),sum);
         }
        }
         return sum>100?-1:sum;
