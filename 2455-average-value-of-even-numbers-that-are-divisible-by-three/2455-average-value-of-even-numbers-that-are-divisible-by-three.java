@@ -4,13 +4,16 @@ class Solution {
         int count=0;
         int len=nums.length;
         for(int i=0;i<len;i++){
-            boolean check=(nums[i]&1)==0 && nums[i]%3==0;
+            boolean check=nums[i]%2==0 && nums[i]%3==0;
             if(check){
                 sum+=nums[i];
                 count++;
             }
         }
-        return (sum==0)?0:sum/count;
+        if(sum==0){
+            return 0;
+        }
+        return sum/count;
     }
 }
 
