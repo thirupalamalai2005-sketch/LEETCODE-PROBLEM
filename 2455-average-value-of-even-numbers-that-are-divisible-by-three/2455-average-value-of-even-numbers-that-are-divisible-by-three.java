@@ -2,12 +2,13 @@ class Solution {
     public int averageValue(int[] nums) {
         int sum=0;
         int count=0;
-        int len=nums.length;
-        for(int i=0;i<len;i++){
-            if(nums[i]%2==0 && nums[i]%3==0){
-                sum+=nums[i];
+        int len=nums.length-1;
+        while(len>=0){
+            if(nums[len]%2==0 && nums[len]%3==0){
+                sum+=nums[len];
                 count++;
             }
+            len--;
         }
         return sum==0?0:sum/count;
     }
