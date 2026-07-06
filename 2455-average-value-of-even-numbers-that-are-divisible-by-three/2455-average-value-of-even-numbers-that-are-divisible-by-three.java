@@ -4,9 +4,8 @@ class Solution {
         int count=0;
         int len=nums.length;
         for(int i=0;i<len;i++){
-            boolean check=nums[i]%2==0 ;
-            boolean check1=nums[i]%3==0;
-            if(check && check1){
+            boolean check=nums[i]%2==0 && nums[i]%3==0;
+            if(check){
                 sum+=nums[i];
                 count++;
             }
