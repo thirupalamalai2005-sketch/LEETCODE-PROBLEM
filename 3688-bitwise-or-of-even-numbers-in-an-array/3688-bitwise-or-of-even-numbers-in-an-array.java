@@ -6,7 +6,7 @@ class Solution {
                 sum=sum|nums[i];
             }
         }
-        return sum==0?0:sum;
+        return sum;
     }
 }
 
