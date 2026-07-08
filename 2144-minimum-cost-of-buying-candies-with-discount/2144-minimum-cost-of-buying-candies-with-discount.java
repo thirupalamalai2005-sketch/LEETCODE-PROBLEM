@@ -12,13 +12,13 @@ class Solution {
         for(int j=max;j>=0;j--){
             if(res[j]==0) continue;
             while(res[j]>0){
-                res[j]--;
                 if(i>0){
                 sum+=j;
                 i--;
-                continue;
+                }else{
+                  i=2;
                 }
-                i=2;
+                res[j]--;
             }
         }
         return sum;
