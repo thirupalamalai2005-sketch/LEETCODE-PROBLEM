@@ -2,7 +2,8 @@ class Solution {
     public int minimumCost(int[] cost) {
         int res[]=new int[101];
         int sum=0;
-        for(int i=0;i<cost.length;i++){
+        int len=cost.length;
+        for(int i=0;i<len;i++){
             res[cost[i]]++;
         }
         int i=2;
