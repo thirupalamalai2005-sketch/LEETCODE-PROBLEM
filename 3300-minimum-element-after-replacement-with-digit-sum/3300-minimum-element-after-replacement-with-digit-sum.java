@@ -10,8 +10,10 @@ class Solution {
 
     public int minElement(int[] nums) {
         int minimum=Integer.MAX_VALUE;
-        for(int i=0;i<nums.length;i++){
-            minimum=Math.min(minimum,check(nums[i]));
+        int len=nums.length;
+        for(int i=0;i<len;i++){
+            int temp=check(nums[i]);
+            minimum=Math.min(minimum,temp);
         }    
         return minimum;
     }
