@@ -1,23 +1,20 @@
 class Solution {
     public int numberOfSpecialChars(String word) {
-        int arr[]=new int[52];
+        int cap[]=new int[26];
+        int smal[]=new int[26];
         for(int i=0;i<word.length();i++){
             char temp=word.charAt(i);
             if(temp>64  && temp<91){
-                arr[temp-'A']++;
+                cap[temp-'A']++;
             }else{
-                arr[temp-'a'+26]++;
+                smal[temp-'a']++;
             }
         }
-        int i=25;
-        int j=51;
         int count=0;
-        while(i>=0){
-            if(arr[i]>=1 && arr[j]>=1){
+        for(int i=0;i<26;i++){
+            if(cap[i]>=1 && smal[i]>=1){
                 count++;
             }
-            i--;
-            j--;
         }
         return count;
     }
