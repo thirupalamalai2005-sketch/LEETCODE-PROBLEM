@@ -1,7 +1,7 @@
 class Solution {
     public int addedInteger(int[] nums1, int[] nums2) {
-        int sum=0;
         int len=nums1.length;
+        int sum=0;
         for(int i=0;i<len;i++){
             sum+=nums2[i]-nums1[i];
         }
