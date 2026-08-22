@@ -7,11 +7,13 @@ class Solution {
                 even++;
             }
         }
-        int arr[]=new int[len];
-        for(int i=even;i<len;i++){
-            arr[i]=1;
+        for(int i=0;i<even;i++){
+            nums[i]=0;
         }
-        return arr;
+        for(int i=even;i<len;i++){
+            nums[i]=1;
+        }
+        return nums;
     }
 }
 
