@@ -1,25 +1,31 @@
 class Solution {
+
     public boolean sumGame(String num) {
         int n = num.length();
-        int leftSum = 0, rightSum = 0;
-        int leftQ = 0, rightQ = 0;
-        for (int i = 0; i < n; i++) {
-            char c = num.charAt(i);
-            if (i < n / 2) {
-                if (c == '?') leftQ++;
-                else leftSum += c - '0';
+        int[] left = get(num.substring(0, n / 2));
+        int[] right = get(num.substring(n / 2, n));
+
+        int n0 = left[0],
+            q0 = left[1];
+        int n1 = right[0],
+            q1 = right[1];
+
+        return (q0 + q1) % 2 == 1 || n0 - n1 != ((q1 - q0) * 9) / 2;
+    }
+
+    private int[] get(String s) {
+        int nn = 0,
+            qq = 0;
+        for (char ch : s.toCharArray()) {
+            if (ch == '?') {
+                qq++;
             } else {
-                if (c == '?') rightQ++;
-                else rightSum += c - '0';
+                nn += ch - '0';
             }
         }
-        if ((leftQ + rightQ) % 2 == 1) return true;
-        int diff = leftSum - rightSum;
-        int qDiff = rightQ - leftQ;
-        return diff != 9 * (qDiff / 2);
+        return new int[] { nn, qq };
     }
 }
-
 
 // Synced seamlessly with LeetHub Pro
 // Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
