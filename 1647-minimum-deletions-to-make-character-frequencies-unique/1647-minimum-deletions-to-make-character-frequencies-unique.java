@@ -7,16 +7,16 @@ class Solution {
             freq[c - 'a']++;
         }
 
-        Set<Integer> used = new HashSet<>();
+        int arr[]=new int[s.length()+1];
         int deletions = 0;
 
         for(int f : freq) {
-            while(f > 0 && used.contains(f)) {
+            while(f > 0 && arr[f]!=0) {
                 f--;    
                 deletions++;
             }
             if(f > 0) {
-                used.add(f);
+                arr[f]++;
             }
         }
         return deletions;
